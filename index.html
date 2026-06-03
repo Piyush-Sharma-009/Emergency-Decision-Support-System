@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDSS Advanced</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1> Emergency Decision Support System</h1>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Mode <i class="fa-solid fa-moon"></i></button>
+
+
+    <div class="card-container">
+        <div class="card" onclick="selectType('medical')">Medical <i class="fa-solid fa-truck-medical"></i></div>
+        <div class="card" onclick="selectType('fire')">Fire <i class="fa-solid fa-fire-flame-simple"></i></div>
+        <div class="card" onclick="selectType('accident')">Accident <i class="fa-solid fa-car"></i></div>
+        <div class="card" onclick="selectType('crime')">Crime <i class="fa-solid fa-handcuffs"></i></div>
+    </div>
+
+    <div class="form-box">
+        <input type="text" id="location" placeholder="Enter your location">
+        
+        <select id="severity">
+            <option value="low">Low Severity</option>
+            <option value="medium">Medium Severity</option>
+            <option value="high">High Severity</option>
+        </select>
+
+        <button onclick="generateDecision()">Get Help</button>
+    </div>
+
+    
+
+    <button onclick="getLocation()">📍 Use My Location</button>
+
+    <div id="loader" class="loader" style="display:none;"></div>
+
+    <div id="result" class="result-box"></div>
+
+
+    <iframe id="map"
+        width="100%" height="250"
+        style="border:0; margin-top:20px;"
+        loading="lazy">
+    </iframe>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
